@@ -1,7 +1,9 @@
 #include <string>
 #define __ADD_DLL
 #include "add.h"
+#include <iostream>
 
+using namespace std;
 int _add(const int a, const int b)
 {
 	return a + b;
@@ -30,4 +32,10 @@ size_t sum(const std::string& str1, const std::string& str2)
 {
     std::string str = str1 + str2;
     return str.size();
+}
+
+void add2(const std::string &str1, const std::string &str2, std::string & res)
+{
+    res = str1 + str2;
+    //cout << "capacity in add2() is: " << res.capacity() << endl;
 }

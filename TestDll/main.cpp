@@ -11,10 +11,15 @@
 #pragma comment(lib, "../Debug/add.lib")
 extern "C" __declspec(dllimport) int sub(const int a, const int b);
 
+using namespace std;
 int main(int argc, char* argv[])
 {
     //std::cout << add("the result of", "£¨add(1, 2)£©:") << add(1, 2) << std::endl;
     std::cout << sum("the result of", "£¨add(1, 2)£©:") << std::endl;
+    std::string res;
+    //cout << "capacity before add2() is: " << res.capacity() << endl;
+    add2("the result of", "£¨add(1, 2)£©:", res);
+    std::cout << res << add(1, 2) << std::endl;
 
 	std::cout << "the result of£¨sub(1, 2)£©:" << sub(1, 2) << std::endl;
 	std::cout << "the result of£¨add(1, 2)£©:" << add(1, 2) << std::endl;
