@@ -27,11 +27,13 @@ https://stackoverflow.com/questions/35310117/debug-assertion-failed-expression-a
 
 简而言之，就是「dll 申请内存，exe 释放内存」或者「exe 申请内存，dll 释放内存」造成的。
 
-「跨模块管理内存」只是“在 dll 中使用 stl”风险之一；同时我们也应该认识到「跨模块管理内存」并不局限于在接口中使用 stl（或者 std::string）才会出现：
+「跨模块管理内存」只是“在 dll 中使用 stl”风险之一.
+
+同时我们也应该认识到「跨模块管理内存」并不局限于在接口中使用 stl（或者 std::string）才会出现：
 它是一个广泛存在的问题，在 [跨DLL的内存分配释放问题][4] 中作者给出了普适性的描述：
 
 > 在一个DLL里面分配内存，然后在DLL的调用者EXE那里释放内存。
-> 当DLL和EXE里面**有一个是使用MT连接CRT的时候**就有问题。如果DLL和EXE都使用MD，那么就没有问题。
+> 当DLL和EXE里面**有一个是使用MT连接CRT的时候**就有问题。如果DLL和EXE**都使用MD**，那么就没有问题。
 
 https://blog.csdn.net/ilvu999/article/details/8219179
 
