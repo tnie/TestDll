@@ -13,7 +13,7 @@ extern "C" __declspec(dllimport) int sub(const int a, const int b);
 
 int main(int argc, char* argv[])
 {
-	std::cout << add("the result of", "£¨add(1, 2)£©:") << add(1, 2) << std::endl;
+	//std::cout << add("the result of", "£¨add(1, 2)£©:") << add(1, 2) << std::endl;
 
 	std::cout << "the result of£¨sub(1, 2)£©:" << sub(1, 2) << std::endl;
 	std::cout << "the result of£¨add(1, 2)£©:" << add(1, 2) << std::endl;

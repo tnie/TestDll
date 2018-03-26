@@ -8,6 +8,6 @@
 #endif
 
 _ADD_API int add(const int, const int);
-_ADD_API std::string add(const std::string&, const std::string&);
+//_ADD_API std::string add(const std::string&, const std::string&);
 
 #undef  _ADD_API
