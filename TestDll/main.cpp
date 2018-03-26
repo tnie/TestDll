@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     std::cout << sum("the result of", "£¨add(1, 2)£©:") << std::endl;
     std::string res;
     res.resize(100);
-    //cout << "capacity before add2() is: " << res.capacity() << endl;
+    cout << "capacity before add2() is: " << res.capacity() << endl;
     add2("the result of", "£¨add(1, 2)£©:", res);
     std::cout << res << add(1, 2) << std::endl;
 

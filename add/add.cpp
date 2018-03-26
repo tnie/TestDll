@@ -37,5 +37,5 @@ size_t sum(const std::string& str1, const std::string& str2)
 void add2(const std::string &str1, const std::string &str2, std::string & res)
 {
     res = str1 + str2;
-    //cout << "capacity in add2() is: " << res.capacity() << endl;
+    cout << "capacity in add2() is: " << res.capacity() << endl;
 }
