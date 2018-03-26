@@ -18,6 +18,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="add.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="add.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{29E987F6-501E-4253-AC4F-32AB5F5B65AC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -141,9 +147,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\TestDll\add.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
