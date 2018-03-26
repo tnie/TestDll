@@ -25,3 +25,9 @@ std::string add(const std::string& str1, const std::string& str2)
 {
 	return str1 + str2;
 }
+
+size_t sum(const std::string& str1, const std::string& str2)
+{
+    std::string str = str1 + str2;
+    return str.size();
+}
