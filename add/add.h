@@ -7,9 +7,10 @@
 #define _ADD_API __declspec(dllimport)
 #endif
 
-_ADD_API int add(const int, const int);
-//_ADD_API std::string add(const std::string&, const std::string&);
-_ADD_API size_t sum(const std::string&, const std::string&);
-_ADD_API void add2(const std::string&, const std::string&, std::string& res);
+_ADD_API void helloValue(std::string name);
+_ADD_API void helloRef  (const std::string& name);
+
+_ADD_API std::string  returnValue(void);
+_ADD_API std::string& returnRef  (void);
 
 #undef  _ADD_API
