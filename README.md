@@ -13,7 +13,27 @@ http://www.cnblogs.com/enterBeijingThreetimes/archive/2010/08/04/1792099.html
 2. 导出变量；
 3. 导出类；
 
-    http://www.cppblog.com/suiaiguo/archive/2009/07/20/90663.html
+    http://www.cppblog.com/suiaiguo/archive/2009/07/20/90663.html， 其导出类的方式是错误的！在 msvc2015 中导入/导出描述必须放在 `class` 关键词和类名之间，否则报错“构造函数、成员函数等未定义”——有点莫名
+    
+    ```cpp
+    _ADD_API class Student  // err
+    {
+    public:
+        Student();
+        int age();
+        bool sex();
+    private:
+        int m_age;
+        bool m_sex;
+        char m_name[10];
+    };
+    ```
+    
+    > : warning C4091: “__declspec(dllimport)”: 没有声明变量时忽略“Student”的左侧
+    
+    > : error LNK2019: 无法解析的外部符号 "public: __thiscall Student::Student(void)" (??0Student@@QAE@XZ)，该符号在函数 _main 中被引用
+    
+    > : error LNK2019: 无法解析的外部符号 "public: int __thiscall Student::age(void)" (?age@Student@@QAEHXZ)，该符号在函数 _main 中被引用
     
 ## 如何使用 dll 文件：
 
