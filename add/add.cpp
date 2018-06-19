@@ -28,13 +28,30 @@ std::string & returnRef(void)
     return g_str;
 }
 
-bool returnBy(std::string * out)
+bool returnPointer(std::string * const out)
 {
     if (out)
     {
         cout << "before " << out->size() << endl;
         cout << "before " << out->capacity() << endl;
-        out->shrink_to_fit();
+        // 重新分配内存？或者只有追加，并未释放？
+        //out->resize(100);
+        //out->~basic_string();
+        cout << "resize: " << out->size() << endl;
+
+        // 重新分配内存？或者只有追加，并未释放？
+        *out = "niel0123456789niel0123456789niel0123456789";
+        return true;
+    }
+    return false;
+}
+
+bool returnSmartPtr(std::shared_ptr<std::string> out)
+{
+    if (out)
+    {
+        cout << "before " << out->size() << endl;
+        cout << "before " << out->capacity() << endl;
         out->resize(100);
         cout << "resize: " << out->size() << endl;
 
@@ -42,4 +59,54 @@ bool returnBy(std::string * out)
         return true;
     }
     return false;
+}
+
+bool returnSmartPtr2(std::shared_ptr<std::string>& out)
+{
+    if (out)
+    {
+        cout << "before " << out->size() << endl;
+        cout << "before " << out->capacity() << endl;
+        out->resize(100);
+        cout << "resize: " << out->size() << endl;
+
+        *out = "niel";
+        return true;
+    }
+    return false;
+}
+
+bool returnSmartPtr3(const std::shared_ptr<std::string>& out)
+{
+    if (out)
+    {
+        cout << "before " << out->size() << endl;
+        cout << "before " << out->capacity() << endl;
+        out->resize(100);
+        cout << "resize: " << out->size() << endl;
+
+        *out = "niel";
+        return true;
+    }
+    return false;
+}
+
+bool fillv(std::shared_ptr<std::vector<std::string>>& out)
+{
+    if (out)
+    {
+        cout << "before " << out->size() << endl;
+        cout << "before " << out->capacity() << endl;
+        out->resize(100);
+        cout << "resize: " << out->size() << endl;
+
+        out->push_back("niel");
+        return true;
+    }
+    return false;
+}
+
+std::shared_ptr<std::vector<std::string>> returnv()
+{
+    return std::make_shared<std::vector<std::string>>(2, "niel");
 }
