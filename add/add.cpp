@@ -27,3 +27,19 @@ std::string & returnRef(void)
 {
     return g_str;
 }
+
+bool returnBy(std::string * out)
+{
+    if (out)
+    {
+        cout << "before " << out->size() << endl;
+        cout << "before " << out->capacity() << endl;
+        out->shrink_to_fit();
+        out->resize(100);
+        cout << "resize: " << out->size() << endl;
+
+        *out = "niel";
+        return true;
+    }
+    return false;
+}

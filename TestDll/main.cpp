@@ -22,12 +22,18 @@ int main(int argc, char* argv[])
     {
         /*auto str = returnValue();
         cout << str << endl;*/
-    }   // run failed 
+    }   // run failed
         // 返回时 __acrt_first_block == header 错误
         // 反推出 str 是在 dll 模块完成赋值的！
     {
         auto str = returnRef();
         cout << str << endl;
+    }
+
+    {
+        std::string niel;
+        cout << returnBy(&niel);
+        cout << returnBy(nullptr);
     }
 
     {
