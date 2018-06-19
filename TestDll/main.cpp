@@ -25,6 +25,9 @@ int main(int argc, char* argv[])
 	std::cout << "the result of£¨sub(1, 2)£©:" << sub(1, 2) << std::endl;
 	std::cout << "the result of£¨add(1, 2)£©:" << add(1, 2) << std::endl;
 
+    cout << "#################" << endl;
+    Student niel;
+    cout << "age: " << niel.age() << endl;
 	return 0;
 }
 
