@@ -71,7 +71,7 @@ private:
     void run() override
     {
         cout << "子线程开始" << "\n";
-        for (int i = 0; i < 20; ++i) { //抢占循环
+        for (int i = 0; i < 5; ++i) { //抢占循环
             cout << "子线程第" << i << "次循环抢占；" << "\n"; //输出信息
             Sleep(100); //抢占延时
         }

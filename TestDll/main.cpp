@@ -19,11 +19,11 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     {
-        cout << "主线程开始" << "\n";
+        cout << "> 主线程开始" << "\n";
         MyThread::instance().start();
         //tt.wait();
         Sleep(1000); //等待子线程
-        cout << "主线程结束" << "\n";
+        cout << "> 主线程结束" << "\n";
         return 0;
     }
     string niel("niel");
