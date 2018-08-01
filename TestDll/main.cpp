@@ -6,6 +6,7 @@
 #include <vector>
 #include "../add/add.h"
 #include "../sub/sub.h"
+#include "../ThreadDemo/ThreadHelper.h"
 // 1. 先考虑不使用 def 文件。这种方式貌似有缺陷才出现的 __declspec(dllexport/dllimport)
 // 2. 暂时也不考虑重载，c 和 C++ 在编译期间命名的区别
 // 3. 函数的调用方式相关__cdecl / __stdcall / _fastcall 几个方式的修饰符号也不相同
@@ -17,6 +18,14 @@
 using namespace std;
 int main(int argc, char* argv[])
 {
+    {
+        cout << "主线程开始" << "\n";
+        MyThread::instance().start();
+        //tt.wait();
+        Sleep(1000); //等待子线程
+        cout << "主线程结束" << "\n";
+        return 0;
+    }
     string niel("niel");
     //helloValue(niel);   // run failed
     helloRef(niel); // ok
