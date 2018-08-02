@@ -21,8 +21,8 @@ int main(int argc, char* argv[])
     {
         cout << "> 主线程开始" << "\n";
         MyThread::instance().start();
-        //tt.wait();
-        Sleep(1000); //等待子线程
+        Sleep(10);          // 线程被终止，code 0
+        //Sleep(10 * 1000);   // 线程执行完毕，code 87
         cout << "> 主线程结束" << "\n";
         return 0;
     }

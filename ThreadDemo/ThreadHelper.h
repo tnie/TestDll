@@ -40,6 +40,9 @@ public:
         {
             return false;
         }
+        DWORD hh;
+        auto succeed = GetExitCodeThread((HANDLE)_hThreadID, &hh);
+        cout << "ExitCodeThread: " << succeed << " " << hh << endl;
         return true;
     }
     virtual void run() = 0;
@@ -51,7 +54,7 @@ unsigned int WINAPI  threadProc(LPVOID lpParam)
 {
     ThreadHelper * p = (ThreadHelper *)lpParam;
     p->run();
-    return 0;
+    return 87;
 }
 
 class MyThread : public ThreadHelper
@@ -64,18 +67,22 @@ public:
     }
     ~MyThread()
     {
+        for (int i = 0; i < 5; ++i) { //抢占循环
+            cout << "子线程第" << i << "次析构倒计时；" << endl; //输出信息
+            Sleep(100); //抢占延时
+        }
         ThreadHelper::wait();
     }
 private:
     MyThread() = default;
     void run() override
     {
-        cout << "子线程开始" << "\n";
-        for (int i = 0; i < 5; ++i) { //抢占循环
-            cout << "子线程第" << i << "次循环抢占；" << "\n"; //输出信息
+        cout << "子线程开始" << endl;
+        for (int i = 0; i < 10; ++i) { //抢占循环
+            cout << "子线程第" << i << "次循环抢占；" << endl; //输出信息
             Sleep(100); //抢占延时
         }
-        cout << "子线程结束" << "\n";
+        cout << "子线程结束" << endl;
     }
 };
 
