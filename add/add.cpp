@@ -47,6 +47,11 @@ bool Student::sex()
     return m_sex;
 }
 
+void Student::change(std::string & name)
+{
+    m_name.swap(name);
+}
+
 int Student::Date::year()
 {
     return 0;

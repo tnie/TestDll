@@ -27,10 +27,11 @@ public:
 
     inline int age();
     bool sex();
+    void change(std::string & name);
 private:
     int m_age;
     bool m_sex;
-    char m_name[10];
+    std::string m_name;
 };
 
 _ADD_API Student * CreateInstance();

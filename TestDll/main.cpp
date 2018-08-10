@@ -8,20 +8,22 @@
 using namespace std;
 int main(int argc, char* argv[])
 {
-    std::cout << sum("love ", " liyw") << std::endl;
-    std::string res;
-    res.resize(100);
-
-
-    cout << "#################" << endl;
     Student niel;
     cout << "age: " << niel.age() << endl;
+    {
+        string liyw = "liyw";
+        niel.change(liyw);  // swap 后并不会马上引发崩溃
+        // do something
+        // swap1：释放对象 liyw 时，其内部存储已经指向 dll 中，BANG
+    }
     {
         auto ptr = CreateInstance2();
     }
     auto ptr = CreateInstance();
     //delete ptr;   // bang
-    ReleaseInstance(ptr);
+    string cat("miao");
+    ptr->change(cat);
+    ReleaseInstance(ptr);   // swap2：释放dll 中 m_name 时，因其存储执行 exe 中，BANG
 
     {
         Student::Date date;
