@@ -10,6 +10,8 @@ int main(int argc, char* argv[])
 {
     Student niel;
     cout << "age: " << niel.age() << endl;
+    cout << "sex: " << niel.sex() << endl;
+
     {
         string liyw = "liyw";
         niel.change(liyw);  // swap 后并不会马上引发崩溃
