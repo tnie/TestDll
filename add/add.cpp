@@ -47,7 +47,7 @@ bool Student::sex()
     return m_sex;
 }
 
-void Student::change(std::string & name)
+void Student::change(std::string name)
 {
     m_name.swap(name);
 }
