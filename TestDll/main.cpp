@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     auto ptr = CreateInstance();
     //delete ptr;   // bang
     string cat("miao");
-    ptr->change(cat);
+    //ptr->change(cat);
     ReleaseInstance(ptr);   // swap2：释放dll 中 m_name 时，因其存储执行 exe 中，BANG
 
     {

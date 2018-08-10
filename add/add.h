@@ -22,12 +22,12 @@ public:
     private:
         long _date;
     };
-    Student();
-    ~Student();
+    /*Student();
+    ~Student();*/
 
-    inline int age();
+    /*_ADD_API*/ int age();
     bool sex();
-    void change(std::string name);
+    /*_ADD_API*/ void change(std::string name);
 private:
     int m_age;
     bool m_sex;

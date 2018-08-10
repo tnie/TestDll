@@ -27,15 +27,15 @@ void ReleaseInstance(Student const * const ptr)
 }
 
 
-Student::Student():m_age(20), m_sex(true), m_name("niel")
-{
-    cout << "Student ctor" << endl;
-}
-
-inline Student::~Student()
-{
-    cout << "Student dtor" << endl;
-}
+//Student::Student():m_age(20), m_sex(true), m_name("niel")
+//{
+//    cout << "Student ctor" << endl;
+//}
+//
+//Student::~Student()
+//{
+//    cout << "Student dtor" << endl;
+//}
 
 int Student::age()
 {
