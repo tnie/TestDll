@@ -10,7 +10,7 @@
 
 _ADD_API size_t sum(const std::string&, const std::string&);
 
-class /*_ADD_API*/ Student
+class _ADD_API Student
 {
 public:
     class Date
@@ -26,15 +26,16 @@ public:
     ~Student();*/
 
     inline int age();
-    bool sex()
-    {
-        return m_sex;
-    }
-    _ADD_API void change(std::string name);
+    bool sex();
+    /*_ADD_API*/ void change(std::string name);
 private:
     int m_age;
     bool m_sex;
     std::string m_name;
+    void do_nothing()
+    {
+        // inline
+    }
 };
 
 _ADD_API Student * CreateInstance();
