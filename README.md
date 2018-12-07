@@ -1,3 +1,7 @@
+关联项目：[试验静态库][5]
+
+----------------
+
 # TestDll
 学习 dll 导出函数、导出变量
 
@@ -86,3 +90,4 @@ https://blog.csdn.net/ilvu999/article/details/8219179
 [2]:https://msdn.microsoft.com/en-us/library/d91k01sh.aspx#annotations:Vj3D4i2uEeiEu_PBl1x4Ig
 [3]:http://www.cnblogs.com/baiyanhuang/archive/2011/07/10/2102484.html
 [4]:https://blog.csdn.net/zj510/article/details/35290505
+[5]:https://github.com/tnie/StaticLibrary
