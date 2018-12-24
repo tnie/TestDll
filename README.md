@@ -17,27 +17,29 @@ http://www.cnblogs.com/enterBeijingThreetimes/archive/2010/08/04/1792099.html
 2. 导出变量；
 3. 导出类；
 
-    http://www.cppblog.com/suiaiguo/archive/2009/07/20/90663.html， 其导出类的方式是错误的！在 msvc2015 中导入/导出描述必须**放在 `class` 关键词和类名之间**，否则报错“构造函数、成员函数等未定义”——有点莫名
-    
-    ```cpp
-    _ADD_API class Student  // err
-    {
-    public:
-        Student();
-        int age();
-        bool sex();
-    private:
-        int m_age;
-        bool m_sex;
-        char m_name[10];
-    };
-    ```
-    
-    > : warning C4091: “__declspec(dllimport)”: 没有声明变量时忽略“Student”的左侧
-    
-    > : error LNK2019: 无法解析的外部符号 "public: __thiscall Student::Student(void)" (??0Student@@QAE@XZ)，该符号在函数 _main 中被引用
-    
-    > : error LNK2019: 无法解析的外部符号 "public: int __thiscall Student::age(void)" (?age@Student@@QAEHXZ)，该符号在函数 _main 中被引用
+前两者常见，关于导出类：
+
+http://www.cppblog.com/suiaiguo/archive/2009/07/20/90663.html， 其导出类的方式是错误的！在 msvc2015 中导入/导出描述必须**放在 `class` 关键词和类名之间**，否则报错“构造函数、成员函数等未定义”——有点莫名
+
+```cpp
+_ADD_API class Student  // err
+{
+public:
+    Student();
+    int age();
+    bool sex();
+private:
+    int m_age;
+    bool m_sex;
+    char m_name[10];
+};
+```
+
+> : warning C4091: “__declspec(dllimport)”: 没有声明变量时忽略“Student”的左侧
+>
+> : error LNK2019: 无法解析的外部符号 "public: __thiscall Student::Student(void)" (??0Student@@QAE@XZ)，该符号在函数 _main 中被引用
+>
+> : error LNK2019: 无法解析的外部符号 "public: int __thiscall Student::age(void)" (?age@Student@@QAEHXZ)，该符号在函数 _main 中被引用
     
 ## 如何使用 dll 文件：
 
@@ -66,7 +68,7 @@ https://blog.csdn.net/ilvu999/article/details/8219179
 
 在 [不要在公共接口中传递 STL 容器][3] 中作者列举了四个方面：
  
-> 客户端使用的STL版本可能不同
+> 客户端使用的 STL 版本可能不同
 
     主要的梗在于使用不同版本的 msvc 开发
     
@@ -84,11 +86,16 @@ https://blog.csdn.net/ilvu999/article/details/8219179
     
 静态成员不同步：https://blog.csdn.net/lewutian/article/details/6786193
 
+### 能否避免风险
 
+[How can I use Standard Library (STL) classes in my dll interface or ABI?][6]
 
+[How do I safely pass objects, especially STL objects, to and from a DLL?][7]
 
 [1]:https://msdn.microsoft.com/en-us/library/a90k134d.aspx#annotations:epC1-i2vEeiXZeM0K3qNow
 [2]:https://msdn.microsoft.com/en-us/library/d91k01sh.aspx#annotations:Vj3D4i2uEeiEu_PBl1x4Ig
 [3]:http://www.cnblogs.com/baiyanhuang/archive/2011/07/10/2102484.html
 [4]:https://blog.csdn.net/zj510/article/details/35290505
 [5]:https://github.com/tnie/StaticLibrary
+[6]:https://stackoverflow.com/questions/5661738/how-can-i-use-standard-library-stl-classes-in-my-dll-interface-or-abi
+[7]:https://stackoverflow.com/questions/22797418/how-do-i-safely-pass-objects-especially-stl-objects-to-and-from-a-dll
