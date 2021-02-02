@@ -11,7 +11,7 @@
 
 http://www.cnblogs.com/enterBeijingThreetimes/archive/2010/08/04/1792099.html
 
-[通过 `__declspec(dllexport)` 导出][1]，或者[通过定义 `.def` 文件导出][2]
+[通过 `__declspec(dllexport)` 导出][1]，或者 [通过定义 `.def` 文件导出][2]
 
 1. 导出函数；
 2. 导出变量；
@@ -19,7 +19,7 @@ http://www.cnblogs.com/enterBeijingThreetimes/archive/2010/08/04/1792099.html
 
 前两者常见，关于导出类：
 
-http://www.cppblog.com/suiaiguo/archive/2009/07/20/90663.html， 其导出类的方式是错误的！在 msvc2015 中导入/导出描述必须**放在 `class` 关键词和类名之间**，否则报错“构造函数、成员函数等未定义”——有点莫名
+http://www.cppblog.com/suiaiguo/archive/2009/07/20/90663.html ， 其导出类的方式是错误的！在 msvc2015 中导入/导出描述必须**放在 `class` 关键词和类名之间**，否则报错“构造函数、成员函数等未定义”——有点莫名
 
 ```cpp
 _ADD_API class Student  // err
@@ -55,12 +55,12 @@ https://stackoverflow.com/questions/35310117/debug-assertion-failed-expression-a
 
 「跨模块管理内存」只是“在 dll 中使用 stl”风险之一.
 
-同时我们也应该认识到「跨模块管理内存」并不局限于在接口中使用 stl（或者 std::string）才会出现：
+同时我们也应该认识到「跨模块管理内存」并不局限于在接口中使用 stl（或者 `std::string`）才会出现：
 它是一个广泛存在的问题，在 [跨 DLL 的内存分配释放问题][4] 中作者给出了普适性的描述：
 
 > 在一个 DLL 里面分配内存，然后在 DLL 的调用者 EXE 那里释放内存。
 > 
-> 当 DLL 和 EXE 里面**有一个是使用 MT 连接 CRT 的时候**就有问题。如果 DLL 和 EXE **都使用 MD**，那么就没有问题。
+> 当 DLL 和 EXE 里面 **有一个是使用 MT 连接 CRT 的时候**就有问题。如果 DLL 和 EXE **都使用 MD**，那么就没有问题。
 
 https://blog.csdn.net/ilvu999/article/details/8219179
 
