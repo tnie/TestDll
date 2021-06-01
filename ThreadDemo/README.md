@@ -35,6 +35,9 @@ A thread executes until one of the following events occurs:
 - Any thread calls the `TerminateThread` function with a handle to the thread.
 - Any thread calls the `TerminateProcess` function with a handle to the process.
 
+[Terminating a Process][4]
+
 [1]:https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodethread
 [2]:https://docs.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject
 [3]:https://docs.microsoft.com/en-us/windows/win32/procthread/terminating-a-thread#how-threads-are-terminated
+[4]:https://docs.microsoft.com/en-us/windows/win32/procthread/terminating-a-process
