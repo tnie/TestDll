@@ -42,7 +42,7 @@ public:
         }
         DWORD hh;
         auto succeed = GetExitCodeThread((HANDLE)_hThreadID, &hh);
-        cout << "ExitCodeThread: " << succeed << " " << hh << endl;
+        cout << "ExitCodeThread: " << succeed << " ExitCode: " << hh << endl;
         return true;
     }
     virtual void run() = 0;

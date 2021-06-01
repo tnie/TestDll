@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
         Sleep(10);          // 线程被终止，code 0
         //Sleep(10 * 1000);   // 线程执行完毕，code 87
         cout << "> 主线程结束" << "\n";
-        return 0;
+        return 27;
     }
     string niel("niel");
     //helloValue(niel);   // run failed
